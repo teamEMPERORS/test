@@ -143,6 +143,29 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
 <body>
+  <table>
+      <tr>
+        <td>
+          <button onclick="closeConversation()">Close Conversation</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="resetConversation()">Reset Conversation</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="sendConversationAttribute('test1', 'value1')">
+            Send Attributes
+          </button>
+        </td>
+      </tr>
+
+    </table>
+
+
+	
     <div class="chat-overlay">
         <div class="chat-overlay-wrapper">
             <div class="chat-overlay-header-mobile">
