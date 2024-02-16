@@ -218,14 +218,53 @@
             console.log('No localStorage support')
         }
 		
-		
-		var request = new XMLHttpRequest();
-		request.open("GET", "properties.json", false);
-		request.send(null)
-		var my_JSON_object = JSON.parse(request.responseText);
-		var ameliaBaseUrl = my_JSON_object.ameliaBaseUrl;
-		var domainCode = my_JSON_object.domainCode;
-		var uiBundle = my_JSON_object.uiBundle;
+
+	function sendConversationAttribute(key, value) {
+	let data = {};
+	data["actionType"] = "ameliaConversationAttributes";
+	let entry = {};
+	entry[key] = value;
+	data["actionData"] = entry;
+	console.log("Send data: " + JSON.stringify(data));
+	sendMessage(data);
+	}
+		  
+		  
+	var isAppStarted = false;
+	      window.addEventListener("message", (res) => {
+		console.log("Inside listner " + res);
+		if (
+		  res?.data?.notificationType === "conversationNew" ||
+		  res?.data?.notificationType === "conversationJoined"
+		) {
+		  console.log("Inside if ");
+		  isAppStarted = true;
+		}
+	      });
+		  
+		  
+	 function sendMessage(jsonData) {
+	        
+	
+	        console.log("Inside send message new ");
+	        if (isAppStarted) {
+	          const iframe = document.getElementById("receiver");
+	          console.log("Inside if send message ");
+	          iframe?.contentWindow?.postMessage(
+	            jsonData,
+	            "https://adviacu.dev.amelia.com"
+	          );
+	        }
+	      }
+
+	    
+	var request = new XMLHttpRequest();
+	request.open("GET", "properties.json", false);
+	request.send(null)
+	var my_JSON_object = JSON.parse(request.responseText);
+	var ameliaBaseUrl = my_JSON_object.ameliaBaseUrl;
+	var domainCode = my_JSON_object.domainCode;
+	var uiBundle = my_JSON_object.uiBundle;
 		
 		
         var ameliaCust = document.getElementById('receiver');
