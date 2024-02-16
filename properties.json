@@ -1,5 +1,5 @@
 {
   "ameliaBaseUrl": "https://guardian.dev.amelia.com",
   "domainCode": "immamportal",
-  "uiBundle": "imchatoverlay"
+  "uiBundle": "guardiantest"
 }
