@@ -263,6 +263,8 @@
 		  console.log("Inside if ");
 		  isAppStarted = true;
 		}
+		else{
+		  window.addEventListener('message', receiveMessage);
 	      });
 		  
 		  
@@ -297,7 +299,7 @@
 	    }
    }
 
-	window.addEventListener('message', receiveMessage);
+	
 
 	    
 	var request = new XMLHttpRequest();
