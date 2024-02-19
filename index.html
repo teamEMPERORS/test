@@ -292,6 +292,7 @@
 	    console.log("recieve msg");
 	    console.log(e.data);
 	    if (e.data.action == "requestPage"){
+		 console.log("inside the recieve if message")
 	        sendMessage({actionType: 'ameliaConversationAttributes', actionData: {"pageReferrer": "testing"}})
 	    }
    }
