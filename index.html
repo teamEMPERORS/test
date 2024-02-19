@@ -254,7 +254,7 @@
 		  
 		  
 	var isAppStarted = false;
-	      window.addEventListener("message", (res) => {
+	     window.addEventListener("message", (res) => {
 		console.log("Inside listner " + res);
 		if (
 		  res?.data?.notificationType === "conversationNew" ||
@@ -264,7 +264,7 @@
 		  isAppStarted = true;
 		}
 		else{
-		  window.addEventListener('message', receiveMessage);
+		  window.addEventListener('message', receiveMessage)
 	      });
 		  
 		  
