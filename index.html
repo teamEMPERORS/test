@@ -281,7 +281,7 @@
 	      }
 
 
-	window.addEventListener('message', receiveMessage);
+	
 	function receiveMessage(e, data) {
 	    /**
 	     * Receive message from child frame and update the DOM
@@ -290,12 +290,16 @@
 	     */
 	    // Check to make sure that this message came from the correct domain.
 	    console.log("recieve msg");
-	    console.log(e.data);
+	    console.log("Event received: " + JSON.stringify(e.data));
 	    if (e.data.action == "requestPage"){
 		 console.log("inside the recieve if message")
 	        sendMessage({actionType: 'ameliaConversationAttributes', actionData: {"pageReferrer": "testing"}})
 	    }
    }
+
+	window.addEventListener('message', receiveMessage);
+
+	    
 	var request = new XMLHttpRequest();
 	request.open("GET", "properties.json", false);
 	request.send(null)
