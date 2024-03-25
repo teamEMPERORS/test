@@ -1,5 +1,5 @@
 {
-  "ameliaBaseUrl": "https://guardian.dev.amelia.com",
-  "domainCode": "voiceservice",
-  "uiBundle": "guardiantest"
+  "ameliaBaseUrl": "https://porterair.dev.amelia.com",
+  "domainCode": "porterair",
+  "uiBundle": "porterair_dev"
 }
